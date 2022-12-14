@@ -1,0 +1,60 @@
+.menu form{
+    display: grid;
+    grid-template: 
+    "img title title" 24px
+    "img price option" 24px
+    "img button button" 32px
+    / 80px 62px 1fr;
+    align-items: center;
+}
+
+.menu{
+    font-size: 15px;
+}
+
+.menu form > h1{
+    grid-area: title;
+    font-size: 16px;
+}
+
+.menu-price{
+    grid-area: price;
+}
+
+.menu-option-list{
+    grid-area:option;
+    justify-self: flex-end;
+}
+
+.menu form > span:last-child{
+    grid-area:button;
+    justify-self: flex-end;
+}
+
+
+.menu-option-input{
+    width:12px;
+    height:12px;
+    border:1px solid #a24f17;
+}
+
+.menu-option-input-on{
+    background-color: #a24f17;
+}
+
+.menu-option{
+    display: inline-flex;
+    align-items: center;
+}
+
+.menu-option .menu-option-input-on{
+    margin-right: 5px;
+}
+
+.menu-img{
+    width:80px;
+    height:80px;
+    grid-area: img;
+    border-radius: 40px;
+    object-fit: cover;
+}

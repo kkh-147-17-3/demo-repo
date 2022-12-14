@@ -1,0 +1,44 @@
+.deco{
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    transition: all 1s;
+}
+
+.deco::before{
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    transition: all 1s;
+    -webkit-mask-size: 16px 16px;
+}
+
+.deco-note:hover, .deco-note-on:hover{
+    background-color: antiquewhite;
+}
+
+.deco-note:hover::before, .deco-note-on::before{
+    background-color: black;
+}
+
+
+.deco-note::before{
+    /* background-image:url(/image/description.svg); */
+    background-color: red;
+    -webkit-mask-image: url(/image/description.svg);
+
+}
+
+.deco-category::before{
+    background-color: yellowgreen;
+    -webkit-mask-image: url(/image/sort.svg);
+}
+
+.deco-category:hover, .deco-category-on:hover{
+    background-color: antiquewhite;
+}
+
+.deco-category:hover::before, .deco-category-on::before{
+    background-color: black;
+}

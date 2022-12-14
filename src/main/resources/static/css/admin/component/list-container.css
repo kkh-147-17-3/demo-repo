@@ -1,0 +1,12 @@
+.list-container{
+    position: relative;
+    background-color: black;
+}
+
+.list-container > table{
+    background-color: cadetblue;
+}
+
+.list-container > div.detail{
+    background-color: crimson;
+}

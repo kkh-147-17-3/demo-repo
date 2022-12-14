@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/admin/button.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/admin/button.css">
+    <title>Document</title>
+</head>
+<body>
+    <span class="btn btn-round btn-toggle btn-toggle-on" onclick="change()">
+        hello~
+    </span>
+
+    <span class="btn btn-round btn-toggle btn-toggle-on btn-toggle-md" onclick="change()">
+        hello~
+    </span>
+<script>
+        const toggleBtn = document.querySelector(".btn-toggle");
+        let buttonStatus = "off";
+        function change(){
+            const toggleBtnClasses = toggleBtn.classList;
+
+            if (buttonStatus === "off"){
+                console.log("on");
+                toggleBtnClasses.add("btn-toggle-on");
+                buttonStatus = "on";
+            }
+            else{
+                console.log("off");
+                toggleBtnClasses.remove("btn-toggle-on");
+                buttonStatus = "off";
+            }
+        }
+    </script>
+</body>
+</html>

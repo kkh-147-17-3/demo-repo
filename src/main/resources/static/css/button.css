@@ -1,0 +1,36 @@
+.btn{
+    --btn-toggle-width : 43em;
+    --btn-height : 20em;
+    --slider-radius : calc(var(--btn-height) * 0.85);
+    /* 모든 버튼의 공통 스타일 */
+    padding: 0.4em 0.2em;
+    width: 5rem;
+    background-color: grey;
+    color:#fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: all 1.5s;
+    border:1px solid #a24f17;
+}
+
+.btn-round{
+    border-radius: 20px;
+}
+
+.btn-default{
+    background-color: #a24f17;
+}
+
+.btn-cancel{
+    background-color: #fff;
+    color:#000;
+}
+
+.menu-img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius: 40px;
+}

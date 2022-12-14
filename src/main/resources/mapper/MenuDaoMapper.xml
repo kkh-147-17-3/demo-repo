@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kkh.web.dao.MenuDao">
+	<select id="getList" resultType="com.kkh.web.entity.Menu">
+		SELECT *
+		FROM Menu
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="field != null">
+				${field} LIKE '%${query}%'
+			</if>
+			AND PRICE > 4000
+		</trim>
+		LIMIT #{offset},#{size}
+	</select>
+	<select id="get" resultType="com.kkh.web.entity.Menu">
+		SELECT *
+		FROM Menu
+		WHERE id=#{id}
+	</select>
+	<select id="count" resultType="int">
+		SELECT COUNT(id)
+		FROM Menu
+		WHERE name LIKE '%${query}%'
+	</select>
+	<insert id="insert">
+		INSERT INTO Menu(name, price, img)
+		VALUES(#{name}, #{price}, #{img})
+	</insert>
+	<update id="update">
+		UPDATE Menu
+		<set>
+			<if test="name != null">name=#{name},</if> 
+			<if test="price != null">price=#{price},</if>
+			<if test="img != null">img=#{img}</if>
+		</set>
+		WHERE id=#{id}
+	</update>
+		<update id="updateAll">
+		UPDATE Menu
+		<set>
+			<if test="name != null">name=#{name},</if> 
+			<if test="price != null">price=#{price},</if>
+			<if test="img != null">img=#{img}</if>
+		</set>
+		WHERE id=#{id}
+	</update>
+	<delete id="delete">
+		DELETE FROM Menu
+		WHERE id=#{id}
+	</delete>
+	<delete id="deleteAll">
+		DELETE FROM Menu
+		WHERE id=#{id}
+	</delete>
+</mapper>

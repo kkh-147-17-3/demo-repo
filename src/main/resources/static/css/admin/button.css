@@ -1,0 +1,139 @@
+.btn{
+    --btn-toggle-width : 43em;
+    --btn-height : 20em;
+    --slider-radius : calc(var(--btn-height) * 0.85);
+    /* 모든 버튼의 공통 스타일 */
+    padding: 0.4em 0.2em;
+    background-color: grey;
+    color:#fff;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition: all 1.5s;
+}
+
+.btn-default{
+    border-radius: 20px;
+}
+
+.btn-default-fill{
+    background-color: #a24f17;
+}
+
+.btn-default-line{
+    border:1px solid #a24f17;
+    background-color: #fff;
+    color:#000;
+}
+
+
+
+
+.btn-ok{
+    /* ok 버튼만의 특화 스타일 */
+}
+
+.btn-cancel{
+    /* 취소 버튼만의 특화 스타일 */
+}
+
+.btn-strong{
+
+}
+
+.btn-round{
+    /* border-radius: calc(var(--btn-height)/2); */
+    border-top-left-radius: calc(var(--btn-height)/2);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: calc(var(--btn-height)/2);
+    border-bottom-right-radius: 0;
+}
+
+.btn-toggle{
+    position: relative;
+    width:var(--btn-toggle-width);
+    text-indent: -995px;
+}
+
+.btn-toggle > input{
+    width:0;
+    height:0;
+}
+
+
+.btn-toggle::before{
+    content:"";
+    box-sizing: border-box;
+    border-radius: var(--slider-radius);
+    background-color: black;
+    left: calc(var(--slider-radius) / 10);
+    position: absolute;
+    text-indent: -999px;
+    width:var(--slider-radius);
+    height:var(--slider-radius);
+    transition: background-color 1s, transform 1s;
+}
+
+.btn-toggle-on{
+    background-color: greenyellow;
+    border-top-left-radius: 0;
+    border-top-right-radius: calc(var(--btn-height)/2);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: calc(var(--btn-height)/2);
+}
+
+.btn-toggle-on::before{
+    background-color: rgb(255, 255, 255);
+    transform: translateX(calc(var(--btn-toggle-width) - var(--btn-height)));
+}
+
+
+/* 최소 700px 이상일 때에 적용된다.*/
+@media (min-width:500px) {
+    .btn{
+        --btn-toggle-width : 13em;
+        --btn-height :5em;
+    }
+}
+
+@media (min-width:800px) {
+    .btn-toggle-md{
+        --btn-toggle-width : 23em;
+        --btn-height : 10em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.slider::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left:4px;
+    bottom:4px;
+    background-color: aliceblue;
+    border-radius: 1em;
+    transition: transform 0.2s;
+}
+input:checked + .slider::before{
+    transform: translateX(26px);
+}
+
+
+input:checked + .slider{
+    background-color:rgb(28, 137, 226);
+}
+*/

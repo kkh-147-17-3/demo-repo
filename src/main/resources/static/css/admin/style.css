@@ -1,0 +1,65 @@
+@import url(../../css/reset.css);
+
+:root{
+    --color-bg: #1D4683;
+    --color-text:#000;
+    --color-text-dark: #000;
+}
+
+html,body{
+    height:100%;
+}
+
+main{
+    background-color: #1D4683;
+    width:100vw;
+    min-width:1000px;
+    height:100%;
+}
+
+.content{
+    margin: 0 auto;
+    width:80%;
+    background-color: bisque;
+    height:100%;
+}
+
+/* aside tag (left-menu) 적용 부분입니다. */
+
+.left-menu{
+    position: fixed;
+    width: 3.75em; /* 60px / 16 px (em) */
+    background-color: aqua;
+    height:100%;
+}
+
+/* content 영역 적용 */
+.modal-wrapper{
+    position: relative;
+}
+
+.modal{
+    position:absolute;
+    left:50%;
+    top:0;
+}
+
+.tab-menu{
+    background-color:violet;
+}
+
+.tab-menu > ul {
+    display: flex;
+}
+
+.admin-btn-container{
+    background-color: aquamarine;
+}
+
+.search-container{
+    background-color: azure;
+}
+
+.pagination-container{
+    background-color: brown;
+}
